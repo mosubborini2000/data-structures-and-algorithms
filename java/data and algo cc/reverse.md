@@ -1,5 +1,5 @@
-![Alt Text](./assets/data%20and%20algo%20cc/1.PNG)
-![Alt Text](./assets/data%20and%20algo%20cc/3.PNG)
+![Alt Text](./assets/3.PNG)
+![Alt Text](./assets/1.PNG)
 
 
 ### and here is the java code I tested in compiler for two methods
