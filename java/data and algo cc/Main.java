@@ -9,6 +9,8 @@ public class Main {
     }
     
     public static void rev(int[] a) {
+
+        
         int n = a.length;
         int[] b = new int[n];
         int j = n;
