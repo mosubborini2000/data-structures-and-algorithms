@@ -4,3 +4,4 @@
 | TITLE           | LINK            | 
 |-----------------|-----------------|
 | revers          | [reverse function](./java/data%20and%20algo%20cc/reverse.md)  | 
+| Insert in midlle of array         | [insertMidille](./java/data%20and%20algo%20cc/insertMiddle.md)  | 
