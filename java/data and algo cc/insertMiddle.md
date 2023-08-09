@@ -1,21 +1,10 @@
-public class Main {
-    public static void main(String[] args) {
-        int a[]={1,2,3,4,5,6};
- int[] result = insertShiftArray(a,5);
-        for (int num : result) {
-            System.out.print(num + " ");
-        }
-        
-                System.out.println(" ");
+![Alt Text](./assets/insert/1.PNG)
+![Alt Text](./assets/insert/2.PNG)
 
-    
-        int b[] = {1, 2,15 ,3,10, 4, 5, 6};
-        int[] result2 = deleteShiftArray(b);
-        for (int num : result2) {
-            System.out.print(num + " ");
-        }
-    }
-    public static int[] insertShiftArray(int[]array,int x){
+
+### and here is the java code I tested in compiler for two methods
+
+ public static int[] insertShiftArray(int[]array,int x){
         int length=array.length;
         int position=length/2;//middle index
         int newArr[]=new int[length+1];//newArr
@@ -29,6 +18,9 @@ public class Main {
         }
         return newArr;
     }
+
+
+### Also I did the optional algorothim and here its:
 public static int[] deleteShiftArray(int array[]) {
     int length = array.length;
     int position = length / 2; // middle index
@@ -43,4 +35,6 @@ public static int[] deleteShiftArray(int array[]) {
     }
     return newArr;
 }
-}
+
+
+  ## you can go to Main.java and I already added the code and you can test it
