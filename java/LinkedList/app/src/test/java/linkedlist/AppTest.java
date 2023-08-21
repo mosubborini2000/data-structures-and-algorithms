@@ -44,4 +44,62 @@ class AppTest {
         assertEquals("{6} -> {5} -> Null", testList.toString());
     }
 
+
+    @Test
+    public void testAppendSingleNode() {
+        testList = new LinkedList<>();
+        testList.append(5);
+        assertEquals("{5} -> Null", testList.toString());
+    }
+
+    @Test
+    public void testAppendMultipleNodes() {
+        testList = new LinkedList<>();
+        testList.append(5);
+        testList.append(6);
+        testList.append(9);
+        assertEquals("{5} -> {6} -> {9} -> Null", testList.toString());
+    }
+
+    @Test
+    public void testInsertBeforeMiddle() {
+        testList = new LinkedList<>();
+        testList.append(5);
+        testList.append(6);
+        testList.append(9);
+        testList.insertBefore(6, 13);
+        assertEquals("{5} -> {13} -> {6} -> {9} -> Null", testList.toString());
+    }
+
+    @Test
+    public void testInsertBeforeFirstNode() {
+        testList = new LinkedList<>();
+        testList.append(5);
+        testList.append(6);
+        testList.append(9);
+        testList.insertBefore(5, 16);
+        assertEquals("{16} -> {5} -> {6} -> {9} -> Null", testList.toString());
+    }
+
+    @Test
+    public void testInsertAfterMiddle() {
+        testList = new LinkedList<>();
+        testList.append(5);
+        testList.append(6);
+        testList.append(9);
+        testList.insertAfter(6, 13);
+        assertEquals("{5} -> {6} -> {13} -> {9} -> Null", testList.toString());
+    }
+
+    @Test
+    public void testInsertAfterLastNode() {
+        testList = new LinkedList<>();
+        testList.append(5);
+        testList.append(6);
+        testList.append(9);
+        testList.insertAfter(9, 11);
+        assertEquals("{5} -> {6} -> {9} -> {11} -> Null", testList.toString());
+    }
+
+
 }
