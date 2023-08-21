@@ -7,3 +7,4 @@
 | Insert in midlle of array | [insertMidille](./java/data%20and%20algo%20cc/insertMiddle.md) | 
 | Binary search             | [Binary search](./java/data%20and%20algo%20cc/binarySearch.md) | 
 | Linked List               | [ Linked List ](./java/LinkedList/LinkedList.md)               | 
+| Linked ListInsertation               | [ Linked List insertation ](./java/LinkedList/linkedListInsertation.md)  

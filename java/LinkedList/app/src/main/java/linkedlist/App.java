@@ -7,12 +7,26 @@ public class App {
 
     static final LinkedList<Integer> list1 = new LinkedList<>();
     public static void main(String[] args) {
-        list1.insert(1);
-        list1.insert(2);
-        list1.insert(3);
-        list1.insert(2);
-        list1.insert(1);
+        LinkedList<Integer> myList = new LinkedList<>();
 
+        myList.append(1);
+        myList.append(2);
+        myList.append(3);
+
+        System.out.println("After appending:");
+        System.out.println(myList);
+
+        myList.insertBefore(2, 5);
+        myList.insertBefore(1, 0);
+
+        System.out.println("After inserting before:");
+        System.out.println(myList);
+
+        myList.insertAfter(2, 6);
+        myList.insertAfter(3, 7);
+
+        System.out.println("After inserting after:");
+        System.out.println(myList);
 
 
 
