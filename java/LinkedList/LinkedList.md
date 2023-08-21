@@ -1,3 +1,7 @@
+![Alt Text](./assets/linkedlist1.PNG)
+ Linked List code:
+[ Linked List ](./app/src/)
+
 Linked List
 A linked list is a fundamental data structure used in computer science to store a collection of elements, also known as nodes. Unlike arrays, linked lists do not require contiguous memory allocation. Instead, each node in a linked list contains two parts: the actual data and a reference (pointer) to the next node in the sequence. This allows for efficient insertion and removal of elements, even at arbitrary positions within the list.
 
@@ -40,6 +44,6 @@ Iterates through the linked list to create the string.
 Time Complexity: O(n) - where n is the number of nodes in the list
 Space Complexity: O(n) - due to the string representation
 
- Linked List code  
-[ Linked List ](./app/src/)
+
+
 
