@@ -100,6 +100,60 @@ class AppTest {
         testList.insertAfter(9, 11);
         assertEquals("{5} -> {6} -> {9} -> {11} -> Null", testList.toString());
     }
+    @Test
+    public void testKthFromEndGreaterThanLength() {
+        testList = new LinkedList<>();
+        testList.append(5);
+        testList.append(6);
+        testList.append(9);
+
+        Integer result = testList.kthFromEnd(4);
+        assertNull(result);
+    }
+
+    @Test
+    public void testKthFromEndSameAsLength() {
+        testList = new LinkedList<>();
+        testList.append(5);
+        testList.append(6);
+        testList.append(9);
+
+        Integer result = testList.kthFromEnd(3);
+        assertNull(result);
+    }
+
+    @Test
+    public void testKthFromEndNotPositive() {
+        testList = new LinkedList<>();
+        testList.append(5);
+        testList.append(6);
+        testList.append(9);
+
+        Integer result = testList.kthFromEnd(-2);
+        assertNull(result);
+    }
+
+    @Test
+    public void testKthFromEndSingleNode() {
+        testList = new LinkedList<>();
+        testList.append(5);
+
+        Integer result = testList.kthFromEnd(0);
+        assertEquals(Integer.valueOf(5), result);
+    }
+
+    @Test
+    public void testKthFromEndHappyPath() {
+        testList = new LinkedList<>();
+        testList.append(5);
+        testList.append(6);
+        testList.append(9);
+        testList.append(11);
+
+        Integer result = testList.kthFromEnd(2);
+        assertEquals(Integer.valueOf(6), result);
+    }
+
 
 
 }
