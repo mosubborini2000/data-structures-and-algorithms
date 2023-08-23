@@ -101,4 +101,27 @@ public class LinkedList<T> {
             curr.next = newNode;
         }
     }
+    public T kthFromEnd(int k){
+        if(k < 0 || head == null) {
+            return null;
+        }
+
+        Node<T> tempRef = head;
+        Node<T> tempRef2 = head;
+        int count = 0;
+
+        while(tempRef.next != null) {
+            tempRef = tempRef.next;
+            count++;
+            if(count > k) {
+                tempRef2 = tempRef2.next;
+            }
+        }
+
+        if(count < k) {
+            return null;
+        }
+        return tempRef2.value;
+
+    }
 }
