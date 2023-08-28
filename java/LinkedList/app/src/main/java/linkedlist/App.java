@@ -7,30 +7,38 @@ public class App {
 
     static final LinkedList<Integer> list1 = new LinkedList<>();
     public static void main(String[] args) {
-        LinkedList<Integer> myList = new LinkedList<>();
+//        LinkedList<Integer> myList = new LinkedList<>();
+//
+//        myList.append(1);
+//        myList.append(2);
+//        myList.append(3);
+//
+//        System.out.println("After appending:");
+//        System.out.println(myList);
+//
+//        myList.insertBefore(2, 5);
+//        myList.insertBefore(1, 0);
+//
+//        System.out.println("After inserting before:");
+//        System.out.println(myList);
+//
+//        myList.insertAfter(2, 6);
+//        myList.insertAfter(3, 7);
+//
+//        System.out.println("After inserting after:");
+//        System.out.println(myList);
 
-        myList.append(1);
-        myList.append(2);
-        myList.append(3);
+        LinkedList  testList1 = new LinkedList<>();
+        LinkedList testList2 = new LinkedList<>();
+        LinkedList  mergedList = new LinkedList<>();
 
-        System.out.println("After appending:");
-        System.out.println(myList);
+        testList1.append(1);
+        testList1.append(3);
+        testList1.append(5);
 
-        myList.insertBefore(2, 5);
-        myList.insertBefore(1, 0);
-
-        System.out.println("After inserting before:");
-        System.out.println(myList);
-
-        myList.insertAfter(2, 6);
-        myList.insertAfter(3, 7);
-
-        System.out.println("After inserting after:");
-        System.out.println(myList);
-
-
-
+        testList2.append(2);
+        testList2.append(4);
+        testList2.append(6);
+        System.out.println(mergedList);
     }
-
-
 }

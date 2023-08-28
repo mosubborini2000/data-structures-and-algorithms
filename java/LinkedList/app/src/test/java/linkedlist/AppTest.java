@@ -153,6 +153,28 @@ class AppTest {
         Integer result = testList.kthFromEnd(2);
         assertEquals(Integer.valueOf(6), result);
     }
+    @Test
+    public void testLinkedListZip(){
+
+        LinkedList  testList1 = new LinkedList<>();
+        LinkedList testList2 = new LinkedList<>();
+        LinkedList  mergedList = new LinkedList<>();
+
+         testList1.append(1);
+         testList1.append(3);
+        testList1.append(5);
+
+        testList2.append(2);
+        testList2.append(4);
+        testList2.append(6);
+
+        assertEquals("{1} -> {2} -> {3} -> {4} -> {5} -> {6} -> Null", mergedList.linkedListZip(testList1, testList2).toString());
+
+
+
+
+
+    }
 
 
 
