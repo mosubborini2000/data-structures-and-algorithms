@@ -9,3 +9,4 @@
 | Linked List               | [ Linked List ](./java/LinkedList/LinkedList.md)               | 
 | Linked ListInsertation               | [ Linked List insertation ](./java/LinkedList/linkedListInsertation.md) 
 | Linked List-kth               | [ Linked List-kth ](./java/LinkedList/kth.md)  
+| Linked List-zip               | [ Linked List-zip ](./java/LinkedList/zip.md)  

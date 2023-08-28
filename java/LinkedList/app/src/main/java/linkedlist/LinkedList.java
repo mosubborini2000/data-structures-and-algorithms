@@ -124,4 +124,23 @@ public class LinkedList<T> {
         return tempRef2.value;
 
     }
+    public LinkedList<T> linkedListZip(LinkedList<T> one, LinkedList<T> two){
+
+        Node<T> tempRefOne = one.head;
+        Node<T> tempRefTwo = two.head;
+
+        LinkedList<T> mergedList = new LinkedList<>();
+
+        while (tempRefOne != null || tempRefTwo != null){
+            if(tempRefOne != null){
+                mergedList.append(tempRefOne.value);
+                tempRefOne = tempRefOne.next;
+            }
+            if(tempRefTwo != null){
+                mergedList.append(tempRefTwo.value);
+                tempRefTwo = tempRefTwo.next;
+            }
+        }
+        return mergedList;
+    }
 }
