@@ -10,3 +10,5 @@
 | Linked ListInsertation               | [ Linked List insertation ](./java/LinkedList/linkedListInsertation.md) 
 | Linked List-kth               | [ Linked List-kth ](./java/LinkedList/kth.md)  
 | Linked List-zip               | [ Linked List-zip ](./java/LinkedList/zip.md)  
+| Stack               | [ Stack ](./java/Stack/Stack.md)  
+| Queue              | [ Queue ](./java/Queue/queue.md)  
