@@ -44,6 +44,27 @@ class AppTest {
         stack.push(6);
         assertEquals(6, stack.peek());
     }
+    private PseudoQueue<Integer> pq;
+
+    @Test void testEnqueue(){
+        pq = new PseudoQueue<Integer>();
+        pq.enqueue(1);
+        pq.enqueue(2);
+        pq.enqueue(3);
+        assertEquals("Top -> {1} -> {2} -> {3} -> Null", pq.toString());
+    }
+
+    @Test void testDequeue(){
+        pq = new PseudoQueue<Integer>();
+        pq.enqueue(1);
+        pq.enqueue(2);
+        pq.enqueue(3);
+        pq.dequeue();
+        assertEquals("Top -> {2} -> {3} -> Null", pq.toString());
+        pq.dequeue();
+        pq.dequeue();
+        assertEquals("Your List Is Empty", pq.toString());
+    }
 
 }
 
