@@ -3,10 +3,28 @@
  */
 package queue;
 
+import queue.AnimalShelter.Animal;
+import queue.AnimalShelter.AnimalShelter;
+
 public class App {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
+        AnimalShelter shelter = new AnimalShelter();
 
+        Animal cat1 = new Animal("cat", "Whiskers");
+        Animal dog1 = new Animal("dog", "Buddy");
+        Animal cat2 = new Animal("cat", "Fluffy");
+        Animal dog2 = new Animal("dog", "Rex");
+
+        shelter.enqueue(cat1);
+        shelter.enqueue(dog1);
+        shelter.enqueue(cat2);
+        shelter.enqueue(dog2);
+
+        System.out.println("Dequeueing a cat: " + shelter.dequeue("cat").getName()); // Should print "Whiskers"
+        System.out.println("Dequeueing a dog: " + shelter.dequeue("dog").getName()); // Should print "Buddy"
+        System.out.println("Dequeueing a cat: " + shelter.dequeue("cat").getName()); // Should print "Fluffy"
+        System.out.println("Dequeueing a dog: " + shelter.dequeue("dog").getName()); // Should print "Rex"
 
     }
 }
