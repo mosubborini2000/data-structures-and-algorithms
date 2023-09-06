@@ -12,4 +12,5 @@
 | Linked List-zip               | [ Linked List-zip ](./java/LinkedList/zip.md)  
 | Stack               | [ Stack ](./java/Stack/Stack.md)  
 | Queue              | [ Queue ](./java/Queue/queue.md)  
-| Pseudoqueue              | [ Pseudoqueue ](./java/Stack/pescustack.md)  
+| Pseudoqueue              | [ Pseudoqueue ](./java/Stack/pescustack.md) 
+| AnimalShilter              | [ AnimalShilter ](./java/Queue/animal.md)   
