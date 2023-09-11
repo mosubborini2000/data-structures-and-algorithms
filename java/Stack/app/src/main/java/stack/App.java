@@ -3,10 +3,15 @@
  */
 package stack;
 
+import static stack.brackets.validateBrackets;
+
 public class App {
 
     public static void main(String[] args) {
 
-
+        System.out.println(validateBrackets("{}"));
+        System.out.println(validateBrackets("{}(){}"));
+        System.out.println(validateBrackets("()[[Extra Characters]]"));
+        System.out.println(validateBrackets("(){}[[]]"));
     }
 }
