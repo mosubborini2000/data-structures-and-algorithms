@@ -14,4 +14,5 @@
 | Queue              | [ Queue ](./java/Queue/queue.md)  
 | Pseudoqueue              | [ Pseudoqueue ](./java/Stack/pescustack.md) 
 | AnimalShilter              | [ AnimalShilter ](./java/Queue/animal.md)   
-| Brackets             | [ Brackets ](./java/Stack/brackets.md)   
+| Brackets             | [ Brackets ](./java/Stack/brackets.md) 
+| Trees             | [ Trees ](./java/BinaryTree/tree.md)     
