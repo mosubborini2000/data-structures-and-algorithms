@@ -7,6 +7,18 @@ public class App {
 
 
     public static void main(String[] args) {
+        BinarySearchTree binarySearchTree=new BinarySearchTree();
+        binarySearchTree.add(1);
+        binarySearchTree.add(2);
+        binarySearchTree.add(3);
+        binarySearchTree.add(4);
+        binarySearchTree.add(5);
+//        binarySearchTree.add(6);
+//        binarySearchTree.add(7);
+
+        System.out.println(binarySearchTree.inOrder());
+        System.out.println(binarySearchTree.postOrder());
+        System.out.println(binarySearchTree.preOrder());
 
 
     }
