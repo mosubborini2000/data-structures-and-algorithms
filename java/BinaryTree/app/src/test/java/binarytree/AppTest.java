@@ -65,4 +65,27 @@ class AppTest {
         assertFalse(bst.contains(7));
         assertFalse(bst.contains(20));
     }
+    @Test
+    public void testFindMaximumValueNode() {
+        BinaryTree tree = new BinaryTree();
+        tree.root = new Node(10);
+
+        int maxValue = tree.findMaximumValue();
+        assertEquals(10, maxValue);
+    }
+
+    @Test
+    public void testFindMaximumValueNodes() {
+        BinaryTree tree = new BinaryTree();
+        tree.root = new Node(10);
+        tree.root.left = new Node(5);
+        tree.root.right = new Node(15);
+        tree.root.left.left = new Node(3);
+        tree.root.left.right = new Node(7);
+        tree.root.right.left = new Node(12);
+        tree.root.right.right = new Node(20);
+
+        int maxValue = tree.findMaximumValue();
+        assertEquals(20, maxValue);
+    }
 }

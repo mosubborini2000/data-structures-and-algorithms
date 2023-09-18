@@ -50,4 +50,21 @@ public class BinaryTree {
         postOrderTraversal(root, result);
         return result;
     }
+    public int findMaximumValue() {
+        if (root == null) {
+            throw new IllegalStateException("The tereee is empty");
+        }
+        return findMaximumValue(root);
+    }
+    private int findMaximumValue(Node node) {
+        if (node == null) {
+            return Integer.MIN_VALUE;
+        }
+        int currentValue = node.value;
+        int leftMax = findMaximumValue(node.left);
+        int rightMax = findMaximumValue(node.right);
+        int max1=Math.max(leftMax,rightMax);
+        int max2=Math.max(currentValue,max1);
+        return max2;
+    }
 }
