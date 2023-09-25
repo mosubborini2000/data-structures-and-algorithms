@@ -1,12 +1,17 @@
 package stackandqueue.binarytree;
 
-public class Node {
-    int value;
-    Node left;Node right;
+public class Node<T> {
 
-    public Node(int value) {
+    T value;
+    Node <T> left;
+    Node <T> right;
+
+    public Node(T value) {
         this.value = value;
-        this.left = null;this.right = null;
+        this.left = null;
+        this.right = null;
     }
+
+
 }
 
