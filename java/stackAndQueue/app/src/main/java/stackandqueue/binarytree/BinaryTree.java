@@ -6,8 +6,8 @@ import java.util.ArrayList;
 
 import java.util.List;
 
-public class BinaryTree {
-    Node root;
+public class BinaryTree <T> {
+    Node<Integer> root;
 
     public BinaryTree() {
         this.root = null;
@@ -20,7 +20,7 @@ public class BinaryTree {
         return result;
     }
 
-    private void preOrderTraversal(Node node, List<Integer> result) {
+    private void preOrderTraversal(Node <Integer> node, List<Integer> result) {
         if (node != null) {
             result.add(node.value);
             preOrderTraversal(node.left, result);
@@ -35,13 +35,13 @@ public class BinaryTree {
         return result;
     }
 
-    private void inOrderTraversal(Node node, List<Integer> result) {
+    private void inOrderTraversal(Node <Integer> node, List<Integer> result) {
         if (node != null) {
             inOrderTraversal(node.left, result);
             result.add(node.value);
             inOrderTraversal(node.right, result);}
     }
-    private void postOrderTraversal(Node node, List<Integer> result) {
+    private void postOrderTraversal(Node <Integer> node, List<Integer> result) {
         if (node != null) {
             postOrderTraversal(node.left, result);
             postOrderTraversal(node.right, result);
@@ -59,7 +59,7 @@ public class BinaryTree {
         }
         return findMaximumValue(root);
     }
-    private int findMaximumValue(Node node) {
+    private int findMaximumValue(Node <Integer> node) {
         if (node == null) {
             return Integer.MIN_VALUE;
         }
@@ -73,13 +73,13 @@ public class BinaryTree {
 
         public List<Integer> breadthFirst() throws Exception {
             List<Integer> result = new ArrayList<>();
-            Queue<Node> queue = new Queue<>();
+            Queue<Node<Integer>> queue = new Queue<>();
             if (root == null) {
                 return result;
             }
             queue.enqueue(root);
             while (!queue.isEmpty()) {
-                Node node = queue.dequeue();
+                Node <Integer> node = queue.dequeue();
                 result.add(node.value);
                 if (node.left != null) {
                     queue.enqueue(node.left);
@@ -91,5 +91,4 @@ public class BinaryTree {
 
             return result;
         }
-
 }

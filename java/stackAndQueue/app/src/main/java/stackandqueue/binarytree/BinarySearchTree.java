@@ -5,7 +5,7 @@ public class BinarySearchTree extends BinaryTree{
         root = insert(root, value);
     }
 
-    private Node insert(Node root, int value) {
+    private Node insert(Node<Integer> root, int value) {
         if (root == null) {return new Node(value);}
         if (value < root.value)
         {
@@ -21,7 +21,7 @@ public class BinarySearchTree extends BinaryTree{
         return search(root, value);
     }
 
-    private boolean search(Node root, int value) {
+    private boolean search(Node<Integer> root, int value) {
         if (root == null) {
             return false;}
 
