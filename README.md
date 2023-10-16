@@ -18,4 +18,5 @@
 | Trees             | [ Trees ](./java/BinaryTree/tree.md) 
 | max tree            | [ max tree ](./java/BinaryTree/maxtree.md)  
 | breadth first            | [ breadth first ](./java/stackAndQueue/breadth.md)     
-| tree-fizz-buzz           | [ tree-fizz-buzz ](./java/BinaryTree/fizzbuzz.md)                
+| tree-fizz-buzz           | [ tree-fizz-buzz ](./java/BinaryTree/fizzbuzz.md) 
+| INSERTION SORT           | [INSERTION SORT ](./java/stackAndQueue/sorting.md)                 
