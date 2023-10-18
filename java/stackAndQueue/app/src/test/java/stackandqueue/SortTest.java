@@ -4,7 +4,7 @@
 package stackandqueue;
 
 import org.junit.jupiter.api.Test;
-import sort.InsertionSort;
+import sort.Sort;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -15,8 +15,19 @@ class SortTest {
     @Test
     void InsertionSortTest(){
 
-        InsertionSort sort =new InsertionSort();
+        Sort sort =new Sort();
         sort.InsertionSort(intArray);
+        String str ="";
+        for (int num: intArray) {
+            str+=num+",";
+        }
+        assertEquals("4,8,16,23,24,",str);
+    }
+    @Test
+    void mergeSortTest(){
+
+        Sort sort = new Sort();
+        sort.mergeSort(intArray,intArray.length);
         String str ="";
         for (int num: intArray) {
             str+=num+",";
