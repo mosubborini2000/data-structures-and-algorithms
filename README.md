@@ -21,3 +21,4 @@
 | tree-fizz-buzz           | [ tree-fizz-buzz ](./java/BinaryTree/fizzbuzz.md) 
 | INSERTION SORT           | [INSERTION SORT ](./java/stackAndQueue/sorting.md)
 | merge SORT           | [merge SORT ](./java/stackAndQueue/sortmerge.md)             
+| quick sort          | [quick SORT ](./java/stackAndQueue/quicksort.md)    
