@@ -61,36 +61,6 @@ public class Sort {
 
     }
 
-    public void quickSort(int arr[], int begin, int end) {
-        if (begin < end) {
-            int partitionIndex = partition(arr, begin, end);
-
-            quickSort(arr, begin, partitionIndex-1);
-            quickSort(arr, partitionIndex+1, end);
-        }
-    }
-    private int partition(int arr[], int begin, int end) {
-        int pivot = arr[end];
-        int j = (begin-1);
-
-        for (int i = begin; i <=end ; i++) {
-
-            if (arr[i]<pivot){
-                j++;
-                swap(arr,i,j);
-            }
-        }
-        swap(arr,end,j+1);
-        return j+1;
-
-    }
-    public static void swap(int[] arr, int i, int low){
-        int temp;
-
-        temp = arr[i];
-        arr[i] = arr[low];
-        arr[low] = temp;
-    }
 
 }
 
