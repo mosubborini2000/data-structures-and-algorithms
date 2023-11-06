@@ -22,4 +22,5 @@
 | INSERTION SORT           | [INSERTION SORT ](./java/stackAndQueue/sorting.md)
 | merge SORT           | [merge SORT ](./java/stackAndQueue/sortmerge.md)             
 | Comparisons          | [challenge28 ](./java/movie/cc18.md)
-| hashtable          | [hashtable ](./java/hashtable/hashtable.md)        
+| hashtable          | [hashtable ](./java/hashtable/hashtable.md)      
+| repeated word          | [repeated word ](./java/hashtable/repeatedword.md)   
