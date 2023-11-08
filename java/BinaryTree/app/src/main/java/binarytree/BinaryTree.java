@@ -67,4 +67,13 @@ public class BinaryTree {
         int max2=Math.max(currentValue,max1);
         return max2;
     }
+
+
+    public Node getRoot() {
+        return root;
+    }
+
+    public void setRoot(Node root) {
+        this.root = root;
+    }
 }

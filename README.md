@@ -24,3 +24,4 @@
 | Comparisons          | [challenge28 ](./java/movie/cc18.md)
 | hashtable          | [hashtable ](./java/hashtable/hashtable.md)      
 | repeated word          | [repeated word ](./java/hashtable/repeatedword.md)   
+| Tree Intersection          | [Tree Intersection ](./java/hashtable/treeintersection.md)  
