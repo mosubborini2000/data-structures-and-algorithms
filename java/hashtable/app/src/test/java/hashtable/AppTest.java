@@ -4,6 +4,9 @@
 package hashtable;
 
 import org.junit.jupiter.api.Test;
+
+import java.util.Set;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
@@ -72,5 +75,26 @@ class AppTest {
         assertEquals("it", test2, "repeatedWord test should return 'it'");
         assertEquals("summer", test3, "repeatedWord test should return 'summer'");
     }
+
+    @Test
+    public void testTreeIntersectionWithCommonValues() {
+
+        BinaryTree<Integer> tree1 = new BinaryTree<>(1);
+        tree1.left = new BinaryTree<>(2);
+        tree1.right = new BinaryTree<>(3);
+        tree1.left.left = new BinaryTree<>(4);
+        tree1.left.right = new BinaryTree<>(5);
+        BinaryTree<Integer> tree2 = new BinaryTree<>(3);
+        tree2.left = new BinaryTree<>(5);
+        tree2.right = new BinaryTree<>(6);
+        tree2.left.left = new BinaryTree<>(4);
+        TreeIntersection<Integer> treeIntersection = new TreeIntersection<>();
+        Set<Integer> result = treeIntersection.tree_intersection(tree1, tree2);
+        assertEquals(3, result.size());
+        assertTrue(result.contains(3));
+        assertTrue(result.contains(4));
+        assertTrue(result.contains(5));
+    }
+
 }
 
