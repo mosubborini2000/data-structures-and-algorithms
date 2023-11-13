@@ -5,6 +5,9 @@ package hashtable;
 
 import org.junit.jupiter.api.Test;
 
+
+import java.util.Arrays;
+import java.util.List;
 import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -95,6 +98,29 @@ class AppTest {
         assertTrue(result.contains(4));
         assertTrue(result.contains(5));
     }
+    @Test
+    public void testLeftJoin() {
+        HashTable<String, String> synonyms = new HashTable<>();
+        synonyms.set("happy", "joyful");
+        synonyms.set("sad", "unhappy");
+        synonyms.set("big", "large");
 
+        HashTable<String, String> antonyms = new HashTable<>();
+        antonyms.set("happy", "sad");
+        antonyms.set("big", "small");
+        antonyms.set("fast", "slow");
+
+        List<List<String>> expectedResult = Arrays.asList(
+                Arrays.asList("happy", "joyful", "sad"),
+                Arrays.asList("sad", "unhappy", null),
+                Arrays.asList("big", "large", "small"));
+
+        List<List<String>> result = HashTable.leftJoin(synonyms, antonyms);
+
+        assertEquals(expectedResult.size(), result.size(), "Result size should match expected size");
+
+        for (List<String> expectedRow : expectedResult) {
+            assertTrue(result.contains(expectedRow), "Result should contain expected row: " + expectedRow);
+        }
+    }
 }
-
