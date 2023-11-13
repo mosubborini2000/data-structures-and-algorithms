@@ -96,12 +96,12 @@ public class HashTable<K, V> {
     public String hashmapRepeatedWord(String sentence) {
         HashMap<String, Integer> hashMap = new HashMap<>();
 
-        for (String word : sentence.split(" ")){
-            if (word.endsWith(",")){
+        for (String word : sentence.split(" ")) {
+            if (word.endsWith(",")) {
                 word = removeLastChar(word);
             }
             int count = hashMap.get(word.toLowerCase()) != null ? hashMap.get(word) : 0;
-            if (count == 1){
+            if (count == 1) {
                 return word;
             }
             hashMap.put(word.toLowerCase(), count + 1);
@@ -115,4 +115,30 @@ public class HashTable<K, V> {
                 ? null
                 : (s.substring(0, s.length() - 1));
     }
+
+
+    public static List<List<String>> leftJoin(HashTable<String, String> synonyms, HashTable<String, String> antonyms) {
+        List<List<String>> results = new ArrayList<>();
+
+        for (String key : synonyms.keys()) {
+            List<String> row = new ArrayList<>();
+            row.add(key);
+            String synonym = synonyms.get(key);
+            if (synonym != null) {
+                row.add(synonym);
+            } else {row.add(null);}
+            String antonym = antonyms.get(key);
+            if (antonym != null) {
+                row.add(antonym);
+            } else {row.add(null);
+            }
+            results.add(row);
+        }
+
+        return results;
+    }
+
+
 }
+
+
