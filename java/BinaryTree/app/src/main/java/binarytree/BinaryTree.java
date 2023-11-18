@@ -76,4 +76,14 @@ public class BinaryTree {
     public void setRoot(Node root) {
         this.root = root;
     }
+    public static int calculateHeight(Node root) {
+        if (root == null) {
+            return 0;
+        } else {
+            int leftHeight = calculateHeight(root.left);
+            int rightHeight = calculateHeight(root.right);
+            return Math.max(leftHeight, rightHeight) + 1;
+        }
+    }
+
 }
