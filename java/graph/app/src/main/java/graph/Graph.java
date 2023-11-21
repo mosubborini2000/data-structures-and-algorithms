@@ -1,11 +1,9 @@
 package graph;
 
-import java.util.HashMap;
-import java.util.LinkedList;
+import java.util.*;
 
 import java.util.HashMap;
 import java.util.LinkedList;
-import java.util.List;
 
 public class Graph<T extends Comparable<? super T>> implements Comparable<Graph<T>> {
     public HashMap<Vertex<T>, LinkedList<Edge<T>>> adjacencyLists;
@@ -54,6 +52,31 @@ public class Graph<T extends Comparable<? super T>> implements Comparable<Graph<
     @Override
     public int compareTo(Graph<T> o) {
         throw new UnsupportedOperationException("Graph does not implement compareTo()");
+    }
+
+    public List<Vertex<T>> breadthFirst(Vertex<T> start) {
+        List<Vertex<T>> visitedNodes = new ArrayList<>();
+        Queue<Vertex<T>> queue = new LinkedList<>();
+
+        if (start != null && adjacencyLists.containsKey(start)) {
+            queue.add(start);
+            visitedNodes.add(start);
+
+            while (!queue.isEmpty()) {
+                Vertex<T> currentVertex = queue.poll();
+                List<Edge<T>> neighbors = getNeighbors(currentVertex);
+
+                for (Edge<T> edge : neighbors) {
+                    Vertex<T> neighborVertex = edge.destination;
+                    if (!visitedNodes.contains(neighborVertex)) {
+                        queue.add(neighborVertex);
+                        visitedNodes.add(neighborVertex);
+                    }
+                }
+            }
+        }
+//        System.out.println("Breadth-First Traversal: " + visitedNodes);
+        return visitedNodes;
     }
 
     @Override
