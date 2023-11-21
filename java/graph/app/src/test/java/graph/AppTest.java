@@ -58,4 +58,28 @@ class AppTest {
         assertTrue(vertices.contains(vertex2));
         assertTrue(vertices.contains(vertex3));
     }
+
+    @Test
+    void testBreadthFirst() {
+        Graph<Integer> graph = new Graph<>(10);
+
+        Vertex<Integer> vertex1 = graph.addVertex(1);
+        Vertex<Integer> vertex2 = graph.addVertex(2);
+        Vertex<Integer> vertex3 = graph.addVertex(3);
+        Vertex<Integer> vertex4 = graph.addVertex(4);
+
+        graph.addEdge(vertex1, vertex2);
+        graph.addEdge(vertex1, vertex3);
+        graph.addEdge(vertex2, vertex3);
+        graph.addEdge(vertex2, vertex4);
+
+        List<Vertex<Integer>> result = graph.breadthFirst(vertex1);
+
+        assertEquals(4, result.size());
+        assertEquals(vertex1, result.get(0));
+        assertEquals(vertex2, result.get(1));
+        assertEquals(vertex3, result.get(2));
+        assertEquals(vertex4, result.get(3));
+    }
+
 }
