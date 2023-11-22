@@ -79,6 +79,50 @@ public class Graph<T extends Comparable<? super T>> implements Comparable<Graph<
         return visitedNodes;
     }
 
+
+    ///////trip
+    public Integer businessTrip(String[] cities) {
+        if (cities == null || cities.length < 2) {
+            return null;
+        }
+
+        int cost = 0;
+        for (int i = 0; i < cities.length - 1; i++) {
+            Vertex<T> start = findVertex(cities[i]);
+            Vertex<T> destination = findVertex(cities[i + 1]);
+
+            if (start == null || destination == null) {
+                return null;
+            }
+
+            boolean connected = false;
+            for (Edge<T> edge : getNeighbors(start)) {
+                if (edge.destination.equals(destination)) {
+                    cost += edge.weight;
+                    connected = true;
+                    break;
+                }
+            }
+
+            if (!connected) {
+                return null;
+            }
+        }
+
+        return cost;
+    }
+
+    private Vertex<T> findVertex(String cityName) {
+        for (Vertex<T> vertex : getVertices()) {
+            if (vertex.value.toString().equals(cityName)) {
+                return vertex;
+            }
+        }
+        return null;
+    }
+
+    ///////
+
     @Override
     public String toString() {
         return "Graph{" +
