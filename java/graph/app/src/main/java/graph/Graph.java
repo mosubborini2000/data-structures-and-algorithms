@@ -81,46 +81,57 @@ public class Graph<T extends Comparable<? super T>> implements Comparable<Graph<
 
 
     ///////trip
-    public Integer businessTrip(String[] cities) {
-        if (cities == null || cities.length < 2) {
-            return null;
+
+
+    public static Integer businessTrip(Graph<String> graph, String[] cityNames) {
+        if (cityNames == null || cityNames.length < 2) {
+            return null; // Invalid input
         }
 
         int cost = 0;
-        for (int i = 0; i < cities.length - 1; i++) {
-            Vertex<T> start = findVertex(cities[i]);
-            Vertex<T> destination = findVertex(cities[i + 1]);
 
-            if (start == null || destination == null) {
+        for (int i = 0; i < cityNames.length - 1; i++) {
+            String startCityName = cityNames[i];
+            String destinationCityName = cityNames[i + 1];
+
+            Vertex<String> startVertex = findVertexByName(graph, startCityName);
+            Vertex<String> destinationVertex = findVertexByName(graph, destinationCityName);
+
+            if (startVertex == null || destinationVertex == null) {
                 return null;
             }
 
-            boolean connected = false;
-            for (Edge<T> edge : getNeighbors(start)) {
-                if (edge.destination.equals(destination)) {
-                    cost += edge.weight;
-                    connected = true;
-                    break;
-                }
-            }
+            Edge<String> edge = findEdge(graph, startVertex, destinationVertex);
 
-            if (!connected) {
+            if (edge == null) {
                 return null;
             }
+
+            cost += edge.weight;
         }
 
         return cost;
     }
 
-    private Vertex<T> findVertex(String cityName) {
-        for (Vertex<T> vertex : getVertices()) {
-            if (vertex.value.toString().equals(cityName)) {
+    private static Vertex<String> findVertexByName(Graph<String> graph, String cityName) {
+        for (Vertex<String> vertex : graph.adjacencyLists.keySet()) {
+            if (vertex.value.equals(cityName)) {
                 return vertex;
             }
         }
         return null;
     }
 
+    private static Edge<String> findEdge(Graph<String> graph, Vertex<String> start, Vertex<String> destination) {
+        List<Edge<String>> edges = graph.adjacencyLists.get(start);
+
+        for (Edge<String> edge : edges) {
+            if (edge.destination.equals(destination)) {
+                return edge;
+            }
+        }
+        return null;
+    }
     ///////
 
     @Override
