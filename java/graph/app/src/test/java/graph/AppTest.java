@@ -104,5 +104,26 @@ class AppTest {
         Integer tripCost3 = Graph.businessTrip(cityGraph, tripCities3);
         assertNull(tripCost3);
     }
+    @Test
+    void depthFirst() {
+        Graph<Integer> graph = new Graph<>(5);
+        Vertex<Integer> v1 = graph.addVertex(1);
+        Vertex<Integer> v2 = graph.addVertex(2);
+        Vertex<Integer> v3 = graph.addVertex(3);
+        Vertex<Integer> v4 = graph.addVertex(4);
+        Vertex<Integer> v5 = graph.addVertex(5);
+
+        graph.addEdge(v1, v2);
+        graph.addEdge(v1, v3);
+        graph.addEdge(v2, v4);
+        graph.addEdge(v3, v5);
+        List<Vertex<Integer>> result = graph.depthFirst(v1);
+        assertEquals(5, result.size());
+        assertTrue(result.contains(v1));
+        assertTrue(result.contains(v2));
+        assertTrue(result.contains(v3));
+        assertTrue(result.contains(v4));
+        assertTrue(result.contains(v5));
+    }
 
 }

@@ -132,7 +132,31 @@ public class Graph<T extends Comparable<? super T>> implements Comparable<Graph<
         }
         return null;
     }
-    ///////
+    /////////////38
+
+    public List<Vertex<T>> depthFirst(Vertex<T> start) {
+        List<Vertex<T>> visited = new ArrayList<>();
+        Set<Vertex<T>> toSet = new HashSet<>();
+        Stack<Vertex<T>> stack = new Stack<>();
+
+        if (start != null && adjacencyLists.containsKey(start)) {
+            stack.push(start);
+
+            while (!stack.isEmpty()) {
+                Vertex<T> currentVertex = stack.pop();
+
+                if (!toSet.contains(currentVertex)) {
+                    visited.add(currentVertex);
+                    toSet.add(currentVertex);
+
+                    List<Edge<T>> neighbors = getNeighbors(currentVertex);
+                    for (Edge<T> edge : neighbors) {
+                        Vertex<T> neighborVertex = edge.destination;
+                        stack.push(neighborVertex);
+                    }}}}
+//        System.out.println("depth: " + visited);
+        return visited;
+    }
 
     @Override
     public String toString() {
